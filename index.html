@@ -100,19 +100,19 @@
 				<h1>One-time Donation</h1>
 				<button
 				  data-checkout-mode="payment"
-				  data-price-id="sku_GU4JYXyvvRb2sX"
+				  data-price-id=5
 				>
 				  Donate $5.00 once
 				</button>
 				<button
 				  data-checkout-mode="payment"
-				  data-price-id="sku_GU4KO8nfdg8G2Z"
+				  data-price-id=15"
 				>
 				  Donate $15.00 once
 				</button>
 				<button
 				  data-checkout-mode="payment"
-				  data-price-id="sku_GU4LB0wBViiYsm"
+				  data-price-id=50
 				>
 				  Donate $50.00 once
 				</button>
@@ -131,11 +131,6 @@
       // Replace with the domain you want your users to be redirected back to after payment
       var DOMAIN = location.href.replace(/[^/]*$/, '');
 
-      if (PUBLISHABLE_KEY === 'pk_live_51HMkdnFK0Sot5NjT2qLWh83nw71NHEd85kCyWZYvDqMYQBZSd5BR32YfTtmk9zjUdIbu2YKBDhExnLNvpU8vBbKW00fjdFkTTo') {
-        console.log(
-          'Replace the hardcoded publishable key with your own publishable key: https://dashboard.stripe.com/test/apikeys'
-        );
-      }
 
       var stripe = Stripe(PUBLISHABLE_KEY);
 
