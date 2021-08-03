@@ -1,4 +1,4 @@
-/* Variables */
+/* Variables 
 :root {
   --gray-offset: rgba(0, 0, 0, 0.03);
   --gray-border: rgba(0, 0, 0, 0.15);
@@ -13,27 +13,8 @@
   --logo-image: url("https://storage.googleapis.com/stripe-sample-images/KAVHOLM.svg");
   --form-width: 650px;
 }
-
+*/
 /* Base */
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: var(--body-font-family);
-  font-size: 16px;
-  color: var(--body-color);
-  -webkit-font-smoothing: antialiased;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--body-color);
-  margin-top: 2px;
-  margin-bottom: 4px;
-}
 h1 {
   font-size: 27px;
   color: var(--headline-color);
