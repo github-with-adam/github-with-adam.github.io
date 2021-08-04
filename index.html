@@ -14,7 +14,21 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 	<script src="https://js.stripe.com/v3/"></script>
+	<script async src="https://www.paypalobjects.com/js/external/paypal-button.min.js" type="text/javascript"></script>
   </head>
+	<style>
+		#loader {
+			display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			background: rgba(0, 0, 0, .75) url(spinner.svg) no-repeat center center; //include your spinner url
+			z-index: 10000
+		}
+	</style>
   <body id="top" class="bootstrap-switch-blue">
     <header>
       <div class="profile-page sidebar-collapse">
@@ -98,71 +112,39 @@
 			<div class="h4 mt-0 title">Make a Donation</div>
 			  <section class="container">
 				<h1>One-time Donation</h1>
-				<button
-				  data-checkout-mode="payment"
-				  data-price-id=5
-				>
-				  Donate $5.00 once
-				</button>
-				<button
-				  data-checkout-mode="payment"
-				  data-price-id=15"
-				>
-				  Donate $15.00 once
-				</button>
-				<button
-				  data-checkout-mode="payment"
-				  data-price-id=50
-				>
-				  Donate $50.00 once
-				</button>
+				<form action="https://www.paypal.com/donate" method="post" target="_top">
+				<input type="hidden" name="business" value="ZYW6UZ26TT9V8" />
+				<input type="hidden" name="no_recurring" value="1" />
+				<input type="hidden" name="item_name" value="Graduation Donations" />
+				<input type="hidden" name="currency_code" value="USD" />
+				<input type="text" name="amount" value="9.99" />
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">Donate</input>
+				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+				</form>
+
 			  </section>
+
+
+			<section>
+				<form id="contactForm" name="serverless-form" action="" method="POST">
+					<label for="fname">First name:</label>
+					<input type="text" id="fname" name="fname" value="John">
+					<label for="lname">Last name:</label>
+					<input type="text" id="lname" name="lname" value="Doe">
+					<input type="submit" value="Submit">
+				</form> 
+			</section
         </div>
         <div id="error-message"></div>
       </div>
     </div>
 	</div>
 </div></div>
+
+
+
+
     </div>
-
-	<script>
-      // Replace with your own publishable key: https://dashboard.stripe.com/test/apikeys
-      var PUBLISHABLE_KEY = 'pk_live_51HMkdnFK0Sot5NjT2qLWh83nw71NHEd85kCyWZYvDqMYQBZSd5BR32YfTtmk9zjUdIbu2YKBDhExnLNvpU8vBbKW00fjdFkTTo';
-      // Replace with the domain you want your users to be redirected back to after payment
-      var DOMAIN = location.href.replace(/[^/]*$/, '');
-
-
-      var stripe = Stripe(PUBLISHABLE_KEY);
-
-      // Handle any errors from Checkout
-      var handleResult = function (result) {
-        if (result.error) {
-          var displayError = document.getElementById('error-message');
-          displayError.textContent = result.error.message;
-        }
-      };
-
-      document.querySelectorAll('button').forEach(function (button) {
-        button.addEventListener('click', function (e) {
-          var mode = e.target.dataset.checkoutMode;
-          var priceId = e.target.dataset.priceId;
-          var items = [{ price: priceId, quantity: 1 }];
-
-          // Make the call to Stripe.js to redirect to the checkout page
-          // with the sku or plan ID.
-          stripe
-            .redirectToCheckout({
-              mode: mode,
-              lineItems: items,
-              successUrl:
-                DOMAIN + 'success.html?session_id={CHECKOUT_SESSION_ID}',
-              cancelUrl:
-                DOMAIN + 'canceled.html?session_id={CHECKOUT_SESSION_ID}',
-            })
-            .then(handleResult);
-        });
-      });
-    </script>
 
 
 
@@ -178,6 +160,23 @@
     <script src="js/now-ui-kit.js?v=1.1.0"></script>
     <script src="js/aos.js"></script>
     <script src="scripts/main.js"></script>
+
+	<script>
+		var $form = $('form#test-form'),
+		url = 'https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec'
+
+		$('#submit-form').on('click', function(e) {
+		  e.preventDefault();
+		  var jqxhr = $.ajax({
+			url: url,
+			method: "GET",
+			dataType: "json",
+			data: $form.serializeObject()
+		  }).success(
+			// do something
+		  );
+		})
+	</script>
 
 
 
