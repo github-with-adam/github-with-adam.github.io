@@ -132,7 +132,19 @@
 					<input type="text" id="lname" name="lname" value="Doe">
 					<input type="submit" value="Submit">
 				</form> 
-			</section
+			</section>
+
+
+			<section>
+				<form id="serverless-form" name="serverless-form">
+				  <label for="fname">First name:</label>
+				  <input type="text" id="fname" name="fname" value="John">
+				  <label for="lname">Last name:</label>
+				  <input type="text" id="lname" name="lname" value="Doe">
+				  <input type="submit" value="Submit">
+				</form> 
+			</section>
+
         </div>
         <div id="error-message"></div>
       </div>
@@ -161,21 +173,68 @@
     <script src="scripts/main.js"></script>
 
 	<script>
-		var $form = $('form#test-form'),
-		url = 'https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec'
+		var $form = $('form#test-form');
+		url = 'https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec';
 
 		$('#submit-form').on('click', function(e) {
-		  e.preventDefault();
+		  //e.preventDefault();
+		  console.log($form.serializeObject());
 		  var jqxhr = $.ajax({
 			url: url,
 			method: "GET",
-			dataType: "json",
+			contentType: 'multipart/form-data',
+			processData: false,
 			data: $form.serializeObject()
 		  }).success(
-			// do something
+			console.log("successful GET request")
 		  );
 		})
 	</script>
+
+
+<script>
+        var spinner = $('#loader');
+        const scriptURLC ='https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec'
+        const serverlessForm = document.forms['serverless-form'];
+
+		var $form = $('form#serverlessForm');
+
+        serverlessForm.addEventListener('submit', e => {
+            e.preventDefault();
+            spinner.show();
+			var data = new FormData(serverlessForm);
+			console.log(data)
+
+            fetch(scriptURLC, {
+                    method: 'GET',
+                    body: new FormData(serverlessForm),
+				    processData: false,
+				    contentType: false
+                })
+                .then(res => {
+
+                    console.log(res);
+                    spinner.hide();
+
+                    if (res['status'] == 200) {
+                        console.log("Your form has been submitted!",
+                            "We will get back to you soon. Have a great day!", "success");
+                        return true;
+
+                    } else {
+                        console.log("Something went wrong!", "Please try after some time", "error");
+
+                    }
+                    document.getElementById('submitForm').classList.remove('loading');
+                })
+                .catch(error => {
+
+                    console.log("Something went wrong!", "Please try after some time", "error");
+                    // todo enable submit button
+
+                })
+        });
+    </script>
 
 
 
