@@ -104,19 +104,19 @@
   </div>
 </div>
 
-<div class="section" id="donation">
+<div class="section" id="donate">
 	<div class="container">
       <div class="card">
         <div class="card-body">
 			<div class="h4 mt-0 title">Make a Donation</div>
 			  <section class="container">
 				<h1>One-time Donation</h1>
-				<form action="https://www.paypal.com/donate" method="post" target="_top">
+				<form action="https://www.paypal.com/donate" name="paypal_redirect" method="post" target="_top">
 				<input type="hidden" name="business" value="ZYW6UZ26TT9V8" />
 				<input type="hidden" name="no_recurring" value="1" />
 				<input type="hidden" name="item_name" value="Graduation Donations" />
 				<input type="hidden" name="currency_code" value="USD" />
-				<input type="text" name="amount" value="9.99" />
+				<input type="text" id="amount" name="amount" value="9.99" />
 				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">Donate</input>
 				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 				</form>
@@ -125,22 +125,13 @@
 
 
 			<section>
-				<form id="test-form" name="test-form">
-					<label for="fname">First name:</label>
-					<input type="text" id="fname" name="fname" value="John">
-					<label for="lname">Last name:</label>
-					<input type="text" id="lname" name="lname" value="Doe">
-					<input type="submit" value="Submit">
-				</form> 
-			</section>
-
-
-			<section>
 				<form id="serverless-form" name="serverless-form">
-				  <label for="fname">First name:</label>
-				  <input type="text" id="fname" name="fname" value="John">
-				  <label for="lname">Last name:</label>
-				  <input type="text" id="lname" name="lname" value="Doe">
+				  <label for="name">Name:</label>
+				  <input type="text" id="name" name="name" value="John Doe">
+				  <label for="charity">Charity:</label>
+				  <input type="text" id="charity" name="charity" value="St. Jude">
+				  <label for="donation_amount">Donation Amount:</label>
+				  <input type="text" id="donation_amount" name="donation_amount" value=50>
 				  <input type="submit" value="Submit">
 				</form> 
 			</section>
@@ -172,29 +163,10 @@
     <script src="js/aos.js"></script>
     <script src="scripts/main.js"></script>
 
+
 	<script>
-		var $form = $('form#test-form');
-		url = 'https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec';
-
-		$('#submit-form').on('click', function(e) {
-		  //e.preventDefault();
-		  console.log($form.serializeObject());
-		  var jqxhr = $.ajax({
-			url: url,
-			method: "GET",
-			contentType: 'multipart/form-data',
-			processData: false,
-			data: $form.serializeObject()
-		  }).success(
-			console.log("successful GET request")
-		  );
-		})
-	</script>
-
-
-<script>
         var spinner = $('#loader');
-        const scriptURLC ='https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec'
+        var scriptURLC ='https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec'
         const serverlessForm = document.forms['serverless-form'];
 
 		var $form = $('form#serverlessForm');
@@ -203,13 +175,19 @@
             e.preventDefault();
             spinner.show();
 			var data = new FormData(serverlessForm);
-			console.log(data)
+			
+			console.log(data.get("fname"))
+
+			scriptURLC = scriptURLC + "?Name=" + data.get("name") + "&Charity=" + data.get("charity") + "&Donation=" + data.get("donation_amount")
+			console.log(scriptURLC)
 
             fetch(scriptURLC, {
                     method: 'GET',
-                    body: new FormData(serverlessForm),
-				    processData: false,
-				    contentType: false
+					headers: {
+						'Content-Type': 'application/x-www-form-urlencoded',
+						Host: "https://github-with-adam.github.io/"
+					},
+					mode: "no-cors"
                 })
                 .then(res => {
 
@@ -222,7 +200,11 @@
                         return true;
 
                     } else {
-                        console.log("Something went wrong!", "Please try after some time", "error");
+						console.log(data.get("donation_amount"));
+						document.getElementById("amount").value = data.get("donation_amount");
+						console.log("test 2");
+                        document.paypal_redirect.submit();
+						console.log("test 3");
 
                     }
                     document.getElementById('submitForm').classList.remove('loading');
