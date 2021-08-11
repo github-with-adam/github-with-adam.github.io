@@ -570,7 +570,7 @@ mark {
 
 .figure-caption {
     font-size: 90%;
-    color: #868e96
+    color: #fff;
 }
 
 code,
@@ -8461,6 +8461,63 @@ a.text-dark:hover {
 .invisible {
     visibility: hidden!important
 }
+
+
+input[type=submit] {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: .25rem;
+    transition: all .15s ease-in-out;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff
+}
+
+
+
+input[type=submit].focus,
+input[type=submit]:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, .25)
+}
+
+input[type=submit].disabled,
+input[type=submit]:disabled {
+    opacity: .65
+}
+
+input[type=submit]:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc
+}
+
+
+input[type=submit].disabled,
+input[type=submit]:disabled {
+    background-color: #007bff;
+    border-color: #007bff
+}
+
+input[type=submit].active,
+input[type=submit]:active,
+.show>.btn-primary.dropdown-toggle {
+    background-color: #0069d9;
+    background-image: none;
+    border-color: #0062cc
+}
+
 
 
 /*# sourceMappingURL=bootstrap.min.css.map */

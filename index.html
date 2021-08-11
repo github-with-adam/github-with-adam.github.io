@@ -10,10 +10,12 @@
     <link href="css/aos.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-	<link href="css/normalize.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+	
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
+    <!-- Global site tag (gtag.js) - Google Analytics 
+	<link href="css/normalize.css" rel="stylesheet"> -->
 	<script async src="https://www.paypalobjects.com/js/external/paypal-button.min.js" type="text/javascript"></script>
+
   </head>
 	<style>
 		#loader {
@@ -24,7 +26,8 @@
 			right: 0;
 			bottom: 0;
 			width: 100%;
-			background: rgba(0, 0, 0, .75) url(spinner.svg) no-repeat center center; //include your spinner url
+			background: rgba(0, 0, 0, .75); 
+			url(spinner.svg) no-repeat center center; //include your spinner url
 			z-index: 10000
 		}
 	</style>
@@ -39,6 +42,8 @@
             <div class="collapse navbar-collapse justify-content-end" id="navigation">
               <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#details">Details</a></li>
+                <li class="nav-item"><a class="nav-link smooth-scroll" href="#charity">The Charity</a></li>
                 <li class="nav-item"><a class="nav-link smooth-scroll" href="#donate">Donate</a></li>
               </ul>
             </div>
@@ -51,19 +56,13 @@
 <div class="profile-page">
   <div class="wrapper">
     <div class="page-header page-header-small" filter-color="blue">
-      <div class="page-header-image" data-parallax="true" style="background-image: url('images/Background.jpg');"></div>
+      <div class="page-header-image" data-parallax="true" style="background-image: url('images/Background2.jpg');"></div>
       <div class="container">
         <div class="content-center">
-          <div class="cc-profile-image"><a><img src="images/rowan.jpg" alt="Image"/></a></div>
           <div class="h2 title">Adam Velaruz</div>
-          <p class="category text-white">Data Analyst, World Traveler</p><a class="btn btn-primary smooth-scroll mr-2" href="#about" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Hire Me</a><a class="btn btn-primary smooth-scroll mr-2" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">한국의 이력서</a><a class="btn btn-primary smooth-scroll mr-2" data-aos="zoom-in" data-aos-anchor="data-aos-anchor">Download CV</a>
+          <p class="category text-white">Educator, Leader, World Traveler</p>
         </div>
       </div>
-<!--       <div class="section">
-        <div class="container">
-          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Facebook"><i class="fa fa-facebook"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a></div>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>
@@ -71,31 +70,54 @@
   <div class="container">
     <div class="card" data-aos="fade-up" data-aos-offset="10">
       <div class="row">
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-6 col-md-6 mx-auto">
           <div class="card-body">
-            <div class="h4 mt-0 title">About</div>
-            <p>Hello! I'm Rowan. Data Analyst and World Traveler.</p>
-            <p>This is my portfolio page, hosted on github and built with Bootstrap 4, Now UI Kit and FontAwesome. I have been taking freelance work for the last year since I graduated with my Masters in Mechanical Engineering. Currently, I'm living in Korea, teaching part-time, and learning the language! If you like my work, reach out to me and let's discuss your project!~</p>
+			<img src="images/adam_crop.jpg" alt="Image"/>
           </div>
         </div>
-        <div class="col-lg-6 col-md-12">
+        <div class="col-lg-6 col-md-6 mx-auto">
           <div class="card-body">
-            <div class="h4 mt-0 title">Basic Information</div>
-            <div class="row">
-              <div class="col-sm-4"><strong class="text-uppercase">Age:</strong></div>
-              <div class="col-sm-8">29</div>
+            <div class="h4 mt-0 title">Welcome to my MBA Tuition Fundraising Page!</div>
+            <p>Thank you for finding my page. Your time and money have many competing interests, so I really appreciate that you are here to consider participating in my unique and charitable crowdfunding campaign. Let’s get right to it!</p>
+			<br/>
+			<p>I decided to create a system that could stretch your dollar by keeping me on the hook for charitable giving in the years following my graduation.  Repaying my student debt to a quality non-profit rather than a financial institution just clicked, and so now I am going out on a limb asking you to help me turn this idea into a reality.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="skill">
+  <div class="container">
+    <div class="h4 text-center mb-4 title">Fundraiser Stats</div>
+    <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="progress-container progress-primary"><span class="progress-badge">Donor Count:</span>
+				<span class="progress-value"><strong>53</strong></span>
             </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Email:</strong></div>
-              <div class="col-sm-8">AcceptedWithAdam@gmail.com</div>
+          </div>
+          <div class="col-md-4">
+            <div class="progress-container progress-primary"><span class="progress-badge">Tuition Funds Raised:</span>
+				<span class="progress-value"><strong>$5,000</strong></span>
             </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Location:</strong></div>
-              <div class="col-sm-8">Yongsan-gu, Seoul, South Korea</div>
+          </div>
+          <div class="col-md-4">
+            <div class="progress-container progress-primary"><span class="progress-badge">Post-grad Charity Obligation:</span>
+                <span class="progress-value"><strong>$3,200</strong></span>
             </div>
-            <div class="row mt-3">
-              <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
-              <div class="col-sm-8">English, Beginner Korean</div>
+          </div>
+		</div>
+		<br/>
+		<div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="progress-container progress-primary"><span class="progress-badge">GOAL:</span>
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10" data-aos-duration="2000" role="progressbar" aria-valuenow="5000" aria-valuemin="0" aria-valuemax="50000" style="width: 5%;"></div><span class="progress-value"><strong>$50,000</strong></span>
+              </div>
             </div>
           </div>
         </div>
@@ -104,44 +126,197 @@
   </div>
 </div>
 
-<div class="section" id="donate">
-	<div class="container">
-      <div class="card">
-        <div class="card-body">
-			<div class="h4 mt-0 title">Make a Donation</div>
-			  <section class="container">
-				<h1>One-time Donation</h1>
-				<form action="https://www.paypal.com/donate" name="paypal_redirect" method="post" target="_top">
-				<input type="hidden" name="business" value="ZYW6UZ26TT9V8" />
-				<input type="hidden" name="no_recurring" value="1" />
-				<input type="hidden" name="item_name" value="Graduation Donations" />
-				<input type="hidden" name="currency_code" value="USD" />
-				<input type="text" id="amount" name="amount" value="9.99" />
-				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button">Donate</input>
-				<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-				</form>
-
-			  </section>
 
 
-			<section>
-				<form id="serverless-form" name="serverless-form">
-				  <label for="name">Name:</label>
-				  <input type="text" id="name" name="name" value="John Doe">
-				  <label for="charity">Charity:</label>
-				  <input type="text" id="charity" name="charity" value="St. Jude">
-				  <label for="donation_amount">Donation Amount:</label>
-				  <input type="text" id="donation_amount" name="donation_amount" value=50>
-				  <input type="submit" value="Submit">
-				</form> 
-			</section>
 
+
+
+<div class="section" id="details">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title">Details</div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <div class="h5">Why Should You Donate?</div>
+          </div>
         </div>
-        <div id="error-message"></div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+			<p>You can trust that my past performance and accumulated experience put me in good position to achieve my career goals.  My undergraduate GPA was 3.8, and a high-level look at my resume shows that I completed The Redwoods Leadership Development Program at DaVita (a Fortune 500 company) and went on to manage one of their larger dialysis clinics in LA with 120 patients, 25 employees and $6,000,000 in annual revenue.  
+
+			I have since ventured to Korea where I have now taught English to more than 1,000 students while also creating a youth basketball program and coaching several teams. It has been a deep transformational experience that I know will show up in my leadership style in the future, especially when managing diverse teams, patient populations and student bodies.  
+			</p>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body cc-experience-header">
+            <div class="h5">Charity Repayment Details</div>
+          </div>
+        </div>
+        <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
+          <div class="card-body">
+			<a id="pop2"><img class="mx-auto d-block" src="images/bracket.png" alt="Image"></></a>
+			<br/><br/>
+			<p>I have chosen The Evans Scholars Foundation as the default charity, but you may request your own charity if you so choose.  You may already know, but I was a golf caddie for 10 years growing up, and the Evans Scholarship completely changed my life.  Now, as an alumni of the program, I have a deep respect for these young men and women who work so hard to earn their future in the classroom, their communities, and of course, carrying the golf bag. Please visit the link below if you wish to learn more about the foundation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div></div>
+
+<div class="section" id="charity">
+  <div class="container cc-experience">
+    <div class="h4 text-center mb-4 title">The Charity</div>
+	<div class="tab-content gallery mt-5">
+		<div class="col-md-12 mx-auto tab-pane active">
+		  <div class="ml-auto mr-auto col-md-6">
+			<div class="row">
+				<div class="card-body">
+					<div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href="https://www.wgaesf.org/">
+					<figure class="cc-effect"><img src="images/Evans2.jpg" alt="Image"></>
+						<figcaption>
+						<div class="h4">Evans Scholars Foundation</div>
+						</figcaption>
+					</figure></a></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div></div>
+    
+<div class="section" id="donate">
+	<div class="container cc-experience">
+	  <div class="h4 text-center mb-4 title">Make a Donation</div>
+      <div class="card">
+        <div class="card-body">
+			<div class="row">
+
+					<div class="col-sm-6 col-md-4">
+						<div class="card border-white">
+							<div class="card-header"><strong>Venmo</strong></div>
+								<div class="card-body bg-image hover-overlay" data-mdb-ripple-color="light">
+									<figure class="cc-effect"><a id="pop"><img class="mx-auto d-block" src="images/venmo.png" alt="Image"></></a><br/>
+									<p class="card-text"></p>
+								</div>
+							</div>
+						<!--</div>-->
+					</div>
+
+					<div class="col-sm-6 col-md-4">
+						<div class="card border-white">
+							<div class="card-header"><strong>Zelle</strong></div>
+								<div class="card-body">
+									<figure class="cc-effect"><img class="mx-auto d-block" src="images/zelle.jpg" alt="Image"></><br/>
+									<p class="card-text">Most major banks have integrated the Zelle platform in their online banking systems.  Just log into your bank's app and check if it is available.  If so, you simply need to enter my email address to route the funds directly to my bank for free. (adamvaleruz2@gmail.com)</p>
+								</div>
+							</div>
+						</div>
+						<!--</div>-->
+
+					<div class="col-sm-6 col-md-4">
+						<div class="card border-white">
+							<div class="card-header"><strong>Check</strong></div>
+								<div class="card-body">
+									<figure class="cc-effect"><img class="mx-auto d-block" src="images/check.jpg" alt="Image"></><br/>
+									<p class="card-text">If you want to send a check, please email me and I will reply with the address.  I don’t want to post the address on the web for everyone to see.</p>
+								</div>
+							</div>
+						</div>
+						<!--</div>-->
+
+			</div>
+<!-- 		<div class="row">
+			<div class="h4 mx-auto title">Paypal</div>
+		</div> -->
+		<div class="row">
+			<div class="mx-auto col-md-6">
+				<div class="card border-white">
+					<div class="card-header"><span><strong>Paypal</strong></div>
+						<div class="card-body mx-auto col-md-6">
+							<div>				
+								<form action="https://www.paypal.com/donate" name="paypal_redirect" method="post" target="_top">
+								<input type="hidden" name="business" value="ZYW6UZ26TT9V8" />
+								<input type="hidden" name="no_recurring" value="1" />
+								<input type="hidden" name="item_name" value="Graduation Donations" />
+								<input type="hidden" name="currency_code" value="USD" />
+								<input type="hidden" id="amount" name="amount" value="9.99" />
+								<input type="image" style="display:none" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button"></input>
+								</form>
+
+							<form id="serverless-form" name="serverless-form">
+								<div class="form-group row">
+									<label class="col-md-6 col-form-label" for="name">Name:</label>
+									<div class="col-sm-10">
+									  <input type="text" id="name" name="name" value="John Doe">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-md-6 col-form-label" for="donation_amount">Donation Amount ($):</label>
+									<div class="col-sm-10">
+									  <input type="text" id="donation_amount" name="donation_amount" value=50>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-md-6 col-form-label" for="charity">Charity:</label>
+									<div class="col-sm-10">
+									  <input type="text" id="charity" name="charity" value="Evans Scholars Foundation">
+									</div>
+								</div>
+								<br/>
+								<div class="form-group row">
+									<div class="col-sm-10">
+										<input type="image" src="images/paypal.png"alt="Submit" value="Submit"></>
+									</div>
+								</div>
+							</form> 
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+      </div>
+    </div>
+</div>
+
+
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img class="mx-auto d-block" src="images/venmo.png" id="imagepreview">
+      </div>
+      <div class="modal-footer mx-auto">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="imagemodal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img class="mx-auto d-block" src="images/bracket.png" id="imagepreview">
+      </div>
+      <div class="modal-footer mx-auto">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
 
 
 
@@ -151,7 +326,7 @@
 
 
     <footer class="footer">
-      <div class="h4 title text-center">Adam Velaruz</div>
+      <div class="h4 title text-center">Accepted With Adam</div>
       <div class="text-center text-muted">
         <p>All rights reserved.<br></p>
       </div>
@@ -162,6 +337,64 @@
     <script src="js/now-ui-kit.js?v=1.1.0"></script>
     <script src="js/aos.js"></script>
     <script src="scripts/main.js"></script>
+
+	<script>
+		$("#pop").on("click", function() {
+		   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+		   $('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+		});
+	</script>
+
+
+	<script>
+		$("#pop2").on("click", function() {
+		   $('#imagepreview').attr('src', $('#imageresource').attr('src')); // here asign the image to the modal when the user click the enlarge link
+		   $('#imagemodal2').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+		});
+	</script>
+
+	<script>
+        var scriptURLC ='https://script.google.com/macros/s/AKfycbzpIE2YDlziUxt--_AY8G1g9dAx0s36up4wuJ8ZMBDNGnUZ2Q2p/exec'
+
+		var $form = $('form#serverlessForm');
+
+		scriptURLC = scriptURLC + "&Mode=0" + "&callback=?"
+
+
+		$.getJSON( scriptURLC,function( returnValue ){console.log(returnValue);});
+
+		fetch(scriptURLC, {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+					Host: "https://github-with-adam.github.io/"
+				},
+				mode: "cors"
+			})
+			.then(res => {
+
+				console.log(res);
+
+				if (res['status'] == 200) {
+					console.log("Your form has been submitted!",
+						"We will get back to you soon. Have a great day!", "success");
+					return true;
+
+				} else {
+
+					console.log(res);
+					document.getElementById("amount").value = data.get("donation_amount");
+
+				}
+			})
+			.catch(error => {
+
+				console.log("Something went wrong!", "Please try after some time", "error");
+
+			})
+
+		
+    </script>
 
 
 	<script>
@@ -178,7 +411,7 @@
 			
 			console.log(data.get("fname"))
 
-			scriptURLC = scriptURLC + "?Name=" + data.get("name") + "&Charity=" + data.get("charity") + "&Donation=" + data.get("donation_amount")
+			scriptURLC = scriptURLC + "?Name=" + data.get("name") + "&Charity=" + data.get("charity") + "&Donation=" + data.get("donation_amount") + "&Mode=1" + "&callback=?"
 			console.log(scriptURLC)
 
             fetch(scriptURLC, {
@@ -218,6 +451,17 @@
         });
     </script>
 
+
+
+	<script>
+		$('.btn').on('click', function() {
+			var $this = $(this);
+		  $this.button('loading');
+			setTimeout(function() {
+			   $this.button('reset');
+		   }, 8000);
+		});
+	</script>
 
 
 
